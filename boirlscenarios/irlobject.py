@@ -90,6 +90,7 @@ class IRLObject:
                 self.kernel = TauRBF(input_dim=len(self.bounds), features=self.env.features,
                                      demonstrations=tr, art_demonstrations=art_tr,
                                      discount=self.configurations.getDiscounts())
+                self.kernel.lengthscale.constrain_bounded(lower=1e-36, upper=10)
             elif self.kernelname == constants.RBF:
                 from GPy.kern.src.rbf import RBF
                 self.kernel = RBF(len(self.bounds))
@@ -106,6 +107,7 @@ class IRLObject:
                 self.kernel = TauRBF(input_dim=len(self.bounds), features=self.env.features,
                                      demonstrations=tr, art_demonstrations=art_tr,
                                      discount=self.configurations.getDiscounts())
+                self.kernel.lengthscale.constrain_bounded(lower=1e-36, upper=10)
             elif self.kernelname == constants.RBF:
                 from GPy.kern.src.rbf import RBF
                 self.kernel = RBF(len(self.bounds))
