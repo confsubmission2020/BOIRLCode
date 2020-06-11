@@ -66,12 +66,26 @@ cd ..
 ## Evaluating Existing Results Without Retraining
 As mentioned above, please download the project from it's [Github repository](https://github.com/confsubmission2020/BOIRLCode.git). This project folder contains the results used for Table 1 as well as Figure 5 and 6. We now discuss how to regenerate these results:
 #### For Table 1:
+Table 1 in our paper presents the success rate and number of iterations required for each algorithm to catch up to the expert's ESOR. For instance, our results for Gridworld environment looks as follows:
+
+
+
+| Algorithm          |Kernel           |SR              |ESOR            |
+| ------------------ |---------------- | -------------- |----------------|
+| BO-IRL             |&#961;-RBF       |      70%       |16.0 +/- 15.6   |
+| BO-IRL             |RBF              |      50%       |30.0 +/- 34.4   |
+| BO-IRL             |Matern           |      60%       |22.2 +/- 12.2   |
+| AIRL               |-                |      70%       |70.4 +/- 23.1   |
+| GCL                |-                |      40%       |277.52 +/- 113.1|
+
+To generate this table from existing results, run the following:
 ```
 sh runTable1.sh
 ```
-This will print the results corresponding to Table 1 (there might be slight discrepency in the values due to change in expert demonstrations between experiments). It will also plot the ESOR and NLL progress for the algorithms being evaluated and place them on the ```basedir```. For Fetch-Reach environment, the success rate plot is generated instead of ESOR.
+This will print the results corresponding to Table 1 (there might be slight differences in the values due to change in expert demonstrations between experiments). It will also plot the ESOR and NLL progress for the algorithms being evaluated and place them on the ```basedir```. For Fetch-Reach environment, the success rate plot is generated instead of ESOR.
 
 #### For Figure 5 and 6:
+To generate the plots used in Figures 5 and 6, run the following:
 ```
 python posterior_plot.py
 ```
