@@ -66,7 +66,7 @@ cd ..
 ## Evaluating Existing Results Without Retraining
 As mentioned above, please download the project from it's [Github repository](https://github.com/confsubmission2020/BOIRLCode.git). This project folder contains the results used for Table 1 as well as Figure 5 and 6. We now discuss how to regenerate these results:
 #### For Table 1:
-Table 1 in our paper presents the success rate and number of iterations required for each algorithm to catch up to the expert's ESOR. For instance, our results for Gridworld environment looks as follows:
+Table 1 in our paper presents the success rate and number of iterations required for each algorithm to catch up to the expert's ESOR. For instance, our results for Gridworld environment are as follows:
 
 
 
